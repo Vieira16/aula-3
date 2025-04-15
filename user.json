@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "nome": "Jamal",
+        "email": "jamalballs@gmail.com",
+        "senha": "$2b$10$UFDsZUnMTNUReiMkxW7ZPO2n6xrDWG6.XzrLLG4/M0pe/c05etkBO",
+        "endereco": "Quandale Village",
+        "telefone": "(14)99699-6666",
+        "cpf": "666.666.666-69"
+    },
+    {
+        "id": 2,
+        "nome": "Luciano Tramboiola",
+        "email": "pardal@gmail.com",
+        "senha": "$2b$10$h7HwO/j6zDwk2r1NYNmOF.mNxXLapLV/mtFyiUyxiUbVqDB5qKtlO",
+        "endereco": "Pompeia",
+        "telefone": "(14)99699-6666",
+        "cpf": "666.666.666-69"
+    }
+]
