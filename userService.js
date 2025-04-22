@@ -42,7 +42,11 @@ class userService {
             console.log("Usuario nao existe!")
             return;
     }
-            this.saveUsers()
+    const resultado = await mysql.execute(
+        `DELETE FROM usuario WHERE idusuario = ?`,
+        [id]
+    )
+    return resultado;
         } catch (erro) {
             console.log("Erro ao deletar usuário", erro)
         }
