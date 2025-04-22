@@ -21,9 +21,14 @@ class userService {
             throw error
         }
     }
-    getUsers() {
+    async getUsers(id) {
         try {
-            return this.users
+            const resultado = await mysql.execute(
+                `SELECT idusuario FROM usuario WHERE id = ?`, 
+                [id]
+            );
+            return resultado;
+            
         } catch (erro) {
             console.log("Erro ao buscar usuários", erro)
         }
