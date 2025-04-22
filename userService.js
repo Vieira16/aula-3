@@ -6,40 +6,6 @@ const mysql = require("./mysql");
 
 
 class userService {
-    constructor() { //quando não passa parâmetro traz um valor fixo, que não muda
-        this.filePath = path.join(__dirname, 'user.json')
-        this.users = this.loadUsers()
-        this.nextID = this.getNextId()
-    }
-
-    loadUsers() {
-        try {
-            if (fs.existsSync(this.filePath)) {
-                const data = fs.readFileSync(this.filePath)
-                return JSON.parse(data)
-            }
-        } catch (erro) {
-            console.log("Erro ao carregar arquivo", erro)
-        }
-        return [] //retorna um array vazio
-    }
-
-    getNextId(users) { //função para buscar próximo id
-        try {
-            if (this.users.length === 0) return 1
-            return Math.max(...this.users.map(user => user.id)) + 1
-        } catch (erro) {
-            console.log("Erro ao buscar próximo id", erro)
-        }
-    }
-
-    saveUsers() { //função para salvar os usuários
-        try {
-            fs.writeFileSync(this.filePath, JSON.stringify(this.users))
-        } catch (erro) {
-            console.log("Erro ao salvar arquivo", erro)
-        }
-    }
 
     async addUser(nome, email, senha, endereco, telefone, cpf, idade) {
         try {
