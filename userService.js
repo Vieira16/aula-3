@@ -27,6 +27,7 @@ class userService {
                 `SELECT idusuario FROM usuario WHERE id = ?`, 
                 [id]
             );
+            console.log("resultado", resultado)
             return resultado;
             
         } catch (erro) {
@@ -34,9 +35,13 @@ class userService {
         }
     }
 
-    deleteUser(id) {
+    async deleteUser(id) {
         try {
-            this.users = this.users.filter(user => user.id !== id)
+            const user = await this.getUser(id);
+        if (!user) {
+            console.log("Usuario nao existe!")
+            return;
+    }
             this.saveUsers()
         } catch (erro) {
             console.log("Erro ao deletar usuário", erro)

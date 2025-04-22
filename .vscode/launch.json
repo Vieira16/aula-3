@@ -4,14 +4,15 @@
       {
         "type": "node",
         "request": "launch",
-        "name": "Debug API Node",
+        "name": "Iniciar API Node",
         "skipFiles": ["<node_internals>/**"],
-        "program": "${workspaceFolder}/index.js", // ou index.js
+        "program": "${workspaceFolder}/index.js",
         "env": {
           "NODE_ENV": "development"
         },
         "envFile": "${workspaceFolder}/.env",
-        "outFiles": ["${workspaceFolder}/**/*.js"]
+        "runtimeArgs": ["--nolazy"],
+        "console": "integratedTerminal"
       }
     ]
   }
